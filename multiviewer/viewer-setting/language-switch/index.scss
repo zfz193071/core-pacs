@@ -1,0 +1,54 @@
+@import "~@/assets/css/mixin";
+.language-switch {
+  width: 100%;
+  height: 100%;
+  color: var(--defaultfontColor2);
+  display: flex;
+  flex-direction: column;
+
+  .color {
+    position: relative;
+    border: 1px solid var(--gary2);
+    box-sizing: border-box;
+    padding: 10px 20px;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+    .box-title {
+      position: absolute;
+      left: 17px;
+      top: -9px;
+      background-color: var(--gary4);
+      text-align: center;
+    }
+
+    ::v-deep {
+      .el-radio-group {
+        @include resetRadio(var(--navHoverColor));
+        .el-radio {
+          width: 70px;
+          margin-right: 0;
+        }
+        .el-radio__label {
+          padding-left: 5px;
+          color: var(--defaultfontColor2);
+          font-weight: normal;
+          font-size: 12px;
+        }
+        // radio 勾选字体颜色
+        .el-radio__inner::after {
+          background-color: var(--navHoverColor);
+          width: 8px;
+          height: 8px;
+        }
+        .el-radio__inner::before {
+          background-color: #000000;
+        }
+      }
+    }
+  }
+}

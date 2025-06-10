@@ -1,0 +1,168 @@
+.el-table::before {
+  background-color: unset;
+}
+
+.analysis-table ::v-deep {
+  --border: 1px solid #6b7586;
+  border-top: var(--border);
+  border-bottom: var(--border);
+  font-size: 12px;
+
+  table.el-table__header {
+    border-left: var(--border);
+    border-right: var(--border);
+    box-sizing: border-box;
+    width: unset !important;
+
+    thead tr th {
+      color: #c1c6d5;
+      font-weight: normal;
+      background-color: #485264;
+      border-bottom-color: #485264;
+      padding: 0;
+      line-height: 35px;
+    }
+  }
+
+  table.el-table__body {
+    --color: #e7ebed;
+    border-left: var(--border);
+    border-right: var(--border);
+    //box-sizing: border-box;
+    width: unset !important;
+
+    // 高亮
+    td.highlight {
+      background-color: #4d6977 !important;
+    }
+
+    tr td.el-table__expanded-cell {
+      color: var(--color);
+      background-color: #374958;
+      padding: 20px 10px;
+      border-bottom: none;
+
+      &:hover {
+        background-color: #374958 !important;
+      }
+    }
+
+    td.el-table__expanded-cell {
+      background-color: #374958;
+    }
+
+    tr.el-table__row {
+      td {
+        cursor: pointer;
+        padding: 6px 0;
+        background-color: #353e4d;
+        border-bottom-color: #373e4c;
+        color: var(--color);
+      }
+
+      &:hover > td.el-table__cell {
+        background-color: #4d6976;
+      }
+    }
+  }
+
+  // table空白是展示的内容
+  .el-table__body-wrapper .el-table__empty-block {
+    width: unset !important;
+    background-color: #353e4d;
+    border-left: var(--border);
+    border-right: var(--border);
+  }
+
+  // 报告、建议展开内容
+  .report,
+  .nccn {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+
+    .title {
+      flex-shrink: 0;
+      width: 60px;
+    }
+
+    img {
+      cursor: pointer;
+      width: 12px;
+      height: 12px;
+      position: absolute;
+      bottom: -5px;
+      right: 10px;
+    }
+  }
+
+  .report {
+    margin-bottom: 15px;
+  }
+}
+
+.el-checkbox ::v-deep {
+  --transparent: rgba(0, 0, 0, 0);
+
+  .el-checkbox__inner {
+    background-color: var(--transparent);
+    border-color: #ffffff;
+  }
+
+  .is-focus .el-checkbox__inner {
+    border-color: #ffffff;
+  }
+
+  .is-checked .el-checkbox__inner {
+    background-color: var(--transparent);
+    border-color: #ffffff;
+  }
+}
+
+.tag,
+.normal-tag,
+.warning-tag,
+.danger-tag {
+  width: 54px;
+  height: 20px;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 20px;
+  border: 1px solid;
+}
+
+.normal-tag {
+  border-color: #6db9ab;
+  background-color: #376869;
+}
+
+.warning-tag {
+  border-color: #efb280;
+  background-color: #8d6547;
+}
+
+.danger-tag {
+  border-color: #ef8b88;
+  background-color: #985c61;
+}
+
+.show {
+  color: #71f1b6;
+}
+
+.hidden {
+  color: #cad0e1;
+}
+
+.show,
+.hidden {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 18px;
+    height: 13px;
+    object-fit: contain;
+    margin-right: 3px;
+  }
+}

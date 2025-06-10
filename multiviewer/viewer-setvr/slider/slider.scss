@@ -1,0 +1,39 @@
+#slider {
+  padding: 0 10px;
+  ::v-deep {
+    .el-slider__runway {
+      height: 25px;
+      margin-top: 0;
+    }
+    .el-slider__bar {
+      height: 25px;
+    }
+    .el-slider__button-wrapper {
+      top: 31px;
+      width: 10px;
+      height: 10px;
+      &::before {
+        display: inline-block;
+        content: " ";
+        width: 0;
+        height: 0;
+        border: 6px solid #8b9ebb;
+        border-top-color: transparent;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        position: absolute;
+        top: -9px;
+        left: 0;
+      }
+    }
+    .el-slider__button {
+      width: 10px;
+      height: 10px;
+      border-radius: 0;
+      border: 1px solid #fff;
+      &:hover {
+        transform: none;
+      }
+    }
+  }
+}

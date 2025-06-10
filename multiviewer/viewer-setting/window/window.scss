@@ -1,0 +1,167 @@
+.window {
+  width: 100%;
+  height: 425px;
+  position: relative;
+  border: 1px solid var(--gary2);
+  box-sizing: border-box;
+  font-size: 12px;
+  padding: 18px 15px 15px 15px;
+
+  .box-title {
+    position: absolute;
+    left: 17px;
+    top: -9px;
+    background-color: var(--gary4);
+    text-align: center;
+  }
+
+  .tip_box_block {
+    font-size: 12px;
+
+    input[type="text"] {
+      height: 30px;
+      margin-right: 5px;
+      padding: 0 5px;
+      border: 1px solid var(--gary2);
+      border-radius: 2px;
+      background-color: transparent;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--defaultfontColor2);
+
+      &:nth-of-type(1) {
+        width: 124px;
+      }
+
+      &:nth-of-type(2) {
+        width: 90px;
+      }
+
+      &:nth-of-type(3) {
+        width: 90px;
+        margin-right: 22px;
+      }
+    }
+
+    button {
+      width: 70px;
+      height: 30px;
+      border-radius: 2px;
+      cursor: pointer;
+
+      &.WindowLevelSetConserve {
+        color: #ffffff;
+        outline: none;
+        background: var(--navHoverColor);
+        border: 0;
+        margin-right: 15px;
+      }
+
+      &.WindowLevelSetCancel {
+        color: var(--cancelColor);
+        outline: none;
+        background-color: var(--gary2);
+        border: 0;
+      }
+    }
+  }
+
+  .tip_box_content {
+    height: calc(100% - 50px);
+    overflow: auto;
+    margin-top: 20px;
+
+    table {
+      width: 100%;
+      border: 1px solid var(--gary2);
+
+      tr {
+        height: 30px;
+        line-height: 30px;
+        font-size: 12px;
+        text-indent: 20px;
+      }
+
+      thead {
+        tr {
+          background-color: var(--wwwlHeader);
+
+          th {
+            font-weight: normal;
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          border-left: 1px solid var(--gary2);
+          border-right: 1px solid var(--gary2);
+          color: var(--defaultfontColor);
+          background-color: var(--wwwlBody);
+          border-bottom: 1px solid var(--gary2);
+          &:hover {
+            cursor: pointer;
+            color: #ffffff;
+            background-color: var(--navHoverColor);
+          }
+
+          td {
+            width: 25%;
+            &.td1 {
+              width: 25%;
+            }
+            &:last-child {
+              position: relative;
+            }
+
+            div.item {
+              position: relative;
+              width: 145px;
+              height: 20px;
+              line-height: 20px;
+              margin: auto 0;
+              &.small {
+                width: 80px;
+              }
+
+              input {
+                box-sizing: border-box;
+                outline: none;
+                width: 80%;
+                height: 100%;
+                border: 1px solid var(--gary2);
+                border-radius: 2px;
+                color: #333333;
+                &:focus {
+                  border-color: var(--navHoverColor);
+                }
+                &.error {
+                  border-color: red;
+                }
+              }
+            }
+            div.del {
+              position: absolute;
+              width: 15px;
+              height: 15px;
+              top: 50%;
+              transform: translateY(-50%);
+              right: 5px;
+              color: #f65415;
+              display: none;
+              text-indent: 0;
+              text-align: center;
+              background-repeat: no-repeat;
+              background-size: contain;
+            }
+            &:hover {
+              div.del {
+                display: unset;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

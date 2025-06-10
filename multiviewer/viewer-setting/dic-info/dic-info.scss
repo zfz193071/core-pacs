@@ -1,0 +1,125 @@
+@import "~@/assets/css/mixin";
+
+.dic-info {
+  width: 100%;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  color: var(--defaultfontColor2);
+  font-size: 12px;
+  position: relative;
+  &-title {
+    position: absolute;
+    left: 17px;
+    top: -9px;
+    background-color: var(--gary4);
+    text-align: center;
+    z-index: 10;
+  }
+  .info {
+    position: relative;
+    height: 245px;
+    overflow-y: auto;
+    border: 1px solid var(--gary2);
+    margin-bottom: 17px;
+    padding: 17px 30px 0 40px;
+    box-sizing: border-box;
+
+    .box-title {
+      position: absolute;
+      left: 17px;
+      top: -9px;
+      background-color: var(--gary4);
+      text-align: center;
+    }
+
+    .checkAll,
+    .syncToPrint {
+      width: 33%;
+      margin-bottom: 10px;
+      margin-right: 0;
+    }
+
+    .checkBox {
+      display: flex;
+      flex-wrap: wrap;
+
+      .check {
+        width: 33%;
+        margin-bottom: 10px;
+      }
+    }
+
+    // 覆盖checkbox样式
+    .checkAll,
+    .checkBox .check {
+      ::v-deep {
+        @include resetCheckBox(#cccccc);
+        .el-checkbox__label {
+          color: var(--defaultfontColor2);
+          font-weight: normal;
+          font-size: 12px;
+        }
+        // checkbox 勾选字体颜色
+        .el-checkbox__inner::after {
+          border-color: #333333;
+        }
+        .el-checkbox__inner::before {
+          background-color: #000000;
+        }
+      }
+    }
+  }
+  .font {
+    position: relative;
+    height: 111px;
+    border: 1px solid var(--gary2);
+    padding: 26px 0 0 45px;
+
+    .box-title {
+      position: absolute;
+      left: 17px;
+      top: -9px;
+      background-color: var(--gary4);
+      text-align: center;
+    }
+
+    .title {
+      margin-right: 23px;
+    }
+    .size {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      margin-bottom: 20px;
+
+      ::v-deep {
+        @include resetSelect(var(--defaultfontColor2));
+      }
+    }
+
+    .color-group {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      .color {
+        margin-left: 15px;
+        width: 20px;
+        height: 20px;
+        border-radius: 2px;
+        display: inline-block;
+        cursor: pointer;
+        border: 1px solid var(--gary2);
+        box-sizing: border-box;
+        &:nth-of-type(1) {
+          margin-left: 0;
+        }
+        &.checked,
+        &:hover {
+          box-shadow: 0 0 0 3px var(--navHoverColor);
+        }
+      }
+    }
+  }
+}

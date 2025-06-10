@@ -1,0 +1,74 @@
+.vr {
+  position: relative;
+  .icon-select {
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    transform: translateY(-50%) rotate(-90deg);
+    width: 14px;
+    height: 14px;
+    z-index: 1;
+    background-image: url(~@/assets/images/select2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: transform 0.3s;
+    &:hover {
+      background-image: url(~@/assets/images/select2-hover.png);
+      // + .mrpmipOption {
+      //   display: block;
+      // }
+    }
+    &-rotate {
+      transform: translateY(-50%) rotate(-180deg);
+    }
+  }
+  .view3d {
+  }
+
+  dl {
+    position: absolute;
+    right: 30px;
+    bottom: 5px;
+
+    dd {
+      width: 50px;
+      padding-left: 23px;
+      background: url(../../../assets/images/roi.png) no-repeat left -55px;
+      line-height: 18px;
+      font-size: 12px;
+      color: #8c9aaf;
+      cursor: pointer;
+      box-sizing: border-box;
+      text-align: left;
+      border-radius: 4px;
+
+      &.base {
+        padding-left: 5px;
+        background: url(../../../assets/images/roi.png) no-repeat -33px -39px;
+      }
+    }
+  }
+
+  .ACross {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    .cross {
+      position: absolute;
+      width: 100%;
+      box-sizing: border-box;
+      border-bottom: 1px solid #c624c6;
+    }
+
+    .vertical {
+      position: absolute;
+      height: 100%;
+      box-sizing: border-box;
+      border-right: 1px solid #c624c6;
+    }
+  }
+}

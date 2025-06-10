@@ -1,0 +1,40 @@
+@import "~@/assets/css/mixin";
+
+.prelayout-wrapper {
+  width: 100%;
+  height: 100px;
+  border: 1px solid var(--gary2);
+  box-sizing: border-box;
+  position: relative;
+  font-size: 12px;
+
+  .box-title {
+    position: absolute;
+    left: 17px;
+    top: -9px;
+    background-color: var(--gary4);
+    text-align: center;
+  }
+
+  .content {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .item {
+      ::v-deep {
+        @include resetSelect(var(--defaultfontColor2));
+      }
+    }
+
+    .layout-item {
+      display: flex;
+      align-items: center;
+    }
+  }
+}

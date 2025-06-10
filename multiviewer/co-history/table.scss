@@ -1,0 +1,59 @@
+@import "~@/assets/css/common";
+@import "~@/assets/css/mixin";
+
+.table-header {
+  background-color: var(--datalistTableHeader);
+}
+
+.table-row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  border-width: 0 1px 1px 1px;
+  border-style: solid;
+  border-color: var(--gary2);
+  .checkbox {
+    margin: 0 6px;
+    ::v-deep {
+      @include resetCheckBox(#cccccc);
+      .el-checkbox__label {
+        color: var(--defaultfontColor2);
+        font-weight: normal;
+        font-size: 12px;
+      }
+      // checkbox 勾选字体颜色
+      .el-checkbox__inner::after {
+        border-color: #333333;
+      }
+      .el-checkbox__inner::before {
+        background-color: #000000;
+      }
+    }
+  }
+}
+
+.table-body {
+  max-height: 380px;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .table-row {
+    &:hover {
+      background-color: var(--navHoverColor);
+      color: #ffffff;
+    }
+  }
+}
+
+.table-cell {
+  padding: 10px 5px;
+  font-size: 12px;
+  line-height: 17px;
+  // flex-shrink: 0;
+  .text-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

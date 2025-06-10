@@ -1,0 +1,76 @@
+@import "~@/assets/css/mixin";
+
+.catcher-key,
+.catcher-key-vr,
+.catcher-key-control,
+.catcher-key-rollback {
+  width: 100%;
+  border: 1px solid var(--gary2);
+  box-sizing: border-box;
+  position: relative;
+  font-size: 12px;
+
+  .box-title {
+    position: absolute;
+    left: 17px;
+    top: -9px;
+    background-color: var(--gary4);
+    text-align: center;
+  }
+
+  .content {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .item {
+      ::v-deep {
+        @include resetSelect(var(--defaultfontColor2));
+        .el-radio-group {
+          margin-left: 5px;
+          @include resetRadio(var(--navHoverColor));
+          .el-radio {
+            width: 50px;
+            margin-right: 0;
+          }
+          .el-radio__label {
+            padding-left: 5px;
+            color: var(--defaultfontColor2);
+            font-weight: normal;
+            font-size: 12px;
+          }
+          // radio 勾选字体颜色
+          .el-radio__inner::after {
+            background-color: var(--navHoverColor);
+            width: 8px;
+            height: 8px;
+          }
+          .el-radio__inner::before {
+            background-color: #000000;
+          }
+        }
+      }
+    }
+  }
+}
+
+.catcher-key,
+.catcher-key-vr {
+  height: 100px;
+}
+
+.catcher-key-vr,
+.catcher-key-control,
+.catcher-key-rollback {
+  margin-top: 20px;
+}
+
+.catcher-key-control,
+.catcher-key-rollback {
+  height: 80px;
+}

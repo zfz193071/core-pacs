@@ -1,0 +1,77 @@
+@import "~@/assets/css/mixin";
+.storage-wrapper {
+  width: 100%;
+  height: 100%;
+  color: var(--defaultfontColor2);
+  display: flex;
+  flex-direction: column;
+  .warning {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    background-image: url(~@/assets/images/warning.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .tip {
+    display: flex;
+    .warning {
+      margin-right: 8px;
+    }
+  }
+  .block {
+    position: relative;
+    border: 1px solid var(--gary2);
+    box-sizing: border-box;
+    padding: 10px 20px;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    span{
+      white-space: nowrap;
+    }
+    .box-title {
+      position: absolute;
+      left: 17px;
+      top: -9px;
+      background-color: var(--gary4);
+      text-align: center;
+    }
+    .item {
+      // width: 33%;
+      margin-right: 25px;
+      height: auto;
+
+      ::v-deep {
+        @include resetCheckBox(#cccccc);
+        .el-checkbox__label {
+          color: var(--defaultfontColor2);
+          font-weight: normal;
+          font-size: 12px;
+        }
+        // checkbox 勾选字体颜色
+        .el-checkbox__inner::after {
+          border-color: #333333;
+        }
+        .el-checkbox__inner::before {
+          background-color: #000000;
+        }
+      }
+    }
+
+    .clean-storage {
+      display: flex;
+      align-items: center;
+      color: #3b8be4;
+      cursor: pointer;
+
+      svg {
+        width: 16px;
+        height: 16px;
+        margin-right: 5px;
+      }
+    }
+  }
+}

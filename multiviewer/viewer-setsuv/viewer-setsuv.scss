@@ -1,0 +1,108 @@
+@import "~@/assets/css/common";
+
+#setsuv {
+    width: 250px;
+    position: absolute;
+    top: $toolbarHeight;
+    right: 0;
+    font-size: 12px;
+    overflow: hidden;
+    background: var(--themGary);
+    z-index: $popZIndex;
+    color: var(--defaultfontColor);
+    box-sizing: border-box;
+    border-left: 1px solid var(--gary2);
+    border-right: 1px solid var(--gary2);
+    &.vertical {
+        top: $toolbarVerticalHeight;
+    }
+
+    .head {
+        cursor: move;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 10px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--gary2);
+
+        p {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        span {
+            width: 15px;
+            height: 15px;
+            display: block;
+            cursor: pointer;
+            background-size: contain;
+        }
+    }
+
+    .suv_main {
+        padding: 10px;
+
+        .box {
+            color: var(--defaultfontColor2);
+            width: 100%;
+            height: 40px;
+            display: flex;
+            align-items: center;
+
+            p {
+                width: 80px;
+                margin-right: 30px;
+            }
+
+            input {
+                width: 120px;
+                line-height: 26px;
+                height: 26px;
+                padding: 0 10px;
+                border: 1px solid var(--gary2);
+                border-radius: 3px;
+                background-color: var(--seriesListItemBg);
+                color: var(--defaultfontColor2);
+                font-size: 12px;
+                box-sizing: border-box;
+                &:focus {
+                    border-color: var(--navHoverColor);
+                }
+            }
+
+            .invalid {
+                border: 1px solid red;
+            }
+
+            .other_input {
+                width: 80px;
+                &:disabled{
+                    cursor: not-allowed;
+                    opacity: 0.5;
+                }
+            }
+
+            .btn {
+                width: 30px;
+                height: 24px;
+                line-height: 24px;
+                border-radius: 4px;
+                background: var(--navHoverColor);
+                color: #fff;
+                text-align: center;
+                cursor: pointer;
+                font-size: 12px;
+                &:hover {
+                    background-color: var(--navHoverColor5);
+                }
+                &:not(:first-child) {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}

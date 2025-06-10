@@ -1,0 +1,145 @@
+.infoWrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  font-size: 10px;
+  font-weight: 400;
+  color: #576d8a;
+  line-height: 18px;
+  pointer-events: none;
+
+  .info {
+    display: flex;
+    height: 100%;
+    text-align: left;
+    width: 100%;
+    div {
+      display: flex;
+      width: 50%;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    div:last-child {
+      // padding-right: 20px;
+      text-align: right;
+    }
+  }
+
+  p {
+    padding: 10px;
+
+    span {
+      color: #54c0c7;
+    }
+  }
+
+  .color {
+    position: absolute;
+    height: 50%;
+    width: 20px;
+    right: 8%;
+    top: 0;
+    transform: translateY(50%);
+    color: #25a5ad;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      transform: rotate(90deg);
+      transform-origin: left top;
+    }
+
+    dd,
+    dt {
+      position: absolute;
+      line-height: 20px;
+      width: 100%;
+      text-align: center;
+      left: 0;
+    }
+
+    dd {
+      bottom: -20px;
+    }
+
+    dt {
+      top: -20px;
+    }
+  }
+
+  .pos {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #54c0c7;
+    font-size: 12px;
+
+    p {
+      position: absolute;
+      padding: 0;
+    }
+
+    p:nth-child(1) {
+      top: 5px;
+      text-align: center;
+      width: 100%;
+    }
+
+    p:nth-child(2) {
+      right: 10px;
+      top: 50%;
+    }
+
+    p:nth-child(3) {
+      text-align: center;
+      width: 100%;
+      bottom: 10px;
+    }
+
+    p:nth-child(4) {
+      left: 10px;
+      top: 50%;
+    }
+  }
+
+  .ruler-wrapper {
+    $color: #ffffff;
+    position: absolute;
+    width: 18px;
+    left: 8%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $color;
+    font-size: 12px;
+    mix-blend-mode: difference;
+
+    .ruler {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+
+      .graduate {
+        flex: 1;
+        border-right: 1px solid $color;
+        border-bottom: 1px solid $color;
+      }
+
+      .graduate:first-child {
+        border-top: 1px solid $color;
+      }
+    }
+
+    .text {
+      line-height: 30px;
+      display: inline-block;
+    }
+  }
+}

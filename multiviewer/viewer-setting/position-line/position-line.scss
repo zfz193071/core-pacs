@@ -1,0 +1,186 @@
+.position-line {
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  color: var(--defaultfontColor);
+
+  // 私有样式
+  .default-position {
+    position: relative;
+    height: 100px;
+    border: 1px solid var(--gary2);
+    box-sizing: border-box;
+    padding: 10px 0 10px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+    &:before {
+      content: "默认十字定位线";
+      position: absolute;
+      left: 17px;
+      top: -10px;
+      width: 100px;
+      height: 17px;
+      background-color: var(--gary4);
+      text-align: center;
+    }
+    .info {
+      width: 80px;
+      margin-right: 5px;
+    }
+  }
+
+  .across-position {
+    position: relative;
+    border: 1px solid var(--gary2);
+    padding: 5px 0 5px 40px;
+    height: 265px;
+    box-sizing: border-box;
+    &:before {
+      content: "定位线";
+      position: absolute;
+      left: 17px;
+      top: -10px;
+      width: 65px;
+      height: 17px;
+      background-color: var(--gary4);
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      height: 77px;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: 10px;
+
+      .info {
+        width: 80px;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .pos {
+    position: relative;
+    height: 100px;
+    box-sizing: border-box;
+    border: 1px solid var(--gary2);
+    padding: 10px 0 10px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+    &:before {
+      content: "定位线";
+      position: absolute;
+      left: 17px;
+      top: -10px;
+      width: 50px;
+      height: 17px;
+      background-color: var(--gary4);
+      text-align: center;
+    }
+    .info {
+      width: 80px;
+      margin-right: 5px;
+    }
+  }
+}
+
+// 选择框公共样式
+.select {
+  position: relative;
+  cursor: pointer;
+  width: 192px;
+  height: 32px;
+  border: 1px solid var(--gary2);
+  box-sizing: border-box;
+
+  &:nth-of-type(n) {
+    margin-right: 15px;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    border-top: 4px solid var(--defaultfontColor2);
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+  }
+
+  &:hover {
+    &:after {
+      transform: rotate(180deg);
+    }
+
+    .options {
+      display: block;
+    }
+  }
+
+  .options {
+    display: none;
+    position: absolute;
+    width: inherit;
+    background-color: var(--themGary);
+    z-index: 1;
+
+    .item:hover {
+      background-color: var(--navHoverColor);
+    }
+  }
+
+  // 颜色select
+  &.color-select {
+    .item {
+      height: 30px;
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      padding-left: 5px;
+      box-sizing: border-box;
+
+      .color {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  // 虚线select
+  &.dotted-select {
+    .item {
+      margin-left: 10px;
+
+      .line {
+        height: 15px;
+        width: 140px;
+        border-bottom: 1px solid var(--defaultfontColor2);
+      }
+
+      .dotted {
+        height: 15px;
+        width: 140px;
+        border-bottom: 1px dashed var(--defaultfontColor2);
+      }
+    }
+
+    .options {
+      top: 30px;
+
+      .item {
+        margin-left: 0;
+        padding-left: 10px;
+        height: 30px;
+      }
+    }
+  }
+}

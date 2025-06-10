@@ -1,0 +1,344 @@
+@import "~@/assets/css/common";
+
+#viewer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-width: 720px; // 2023-11-07 新版UI只有横屏
+  color: #2c3e50;
+  background: #000;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+#scrennshot_container {
+  position: absolute;
+}
+
+::v-deep {
+  .moveCursor {
+    cursor: url(../../../static/cursor/move.png), default;
+  }
+
+  .zoomCursor {
+    cursor: url(../../../static/cursor/zoom.png), default;
+  }
+
+  .rotateCursor {
+    cursor: url(../../../static/cursor/rotate.png), default;
+  }
+
+  .windowWLCursor {
+    cursor: url(../../../static/cursor/windowWL.png), default;
+  }
+
+  .centerCursor {
+    cursor: url(../../../static/cursor/center.png), default;
+  }
+
+  .marginfyCursor {
+    cursor: url(../../../static/cursor/marginfy.png), default;
+  }
+
+  .pageCursor {
+    cursor: url(../../../static/cursor/page.png), default;
+  }
+  .thickCursor {
+    cursor: url(../../../static/cursor/arrow.png), default;
+  }
+}
+
+.hideCanvas {
+  z-index: -1;
+  background: #000;
+  position: absolute;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 16px;
+  background: #1c232d;
+}
+
+.scrollbar::-webkit-scrollbar-button:start {
+  background: url(../../assets/images/page_up.png) no-repeat center;
+  background-color: #394c68;
+}
+
+.scrollbar::-webkit-scrollbar-button:end {
+  background: url(../../assets/images/page_down.png) no-repeat center;
+  background-color: #394c68;
+}
+
+.scrollbar::-webkit-scrollbar-button {
+  width: 16px;
+  height: 16px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  width: 16px;
+  background: #2a374a;
+  border-radius: 2px;
+}
+
+.scrollbar::-webkit-scrollbar-corner {
+  display: none;
+}
+
+.scrollbar {
+  scrollbar {
+    -moz-appearance: none;
+    width: 16px;
+    background: #1c232d;
+
+    /* 滚动条按钮颜色 */
+    thumb {
+      -moz-appearance: none;
+      width: 16px;
+      background: #2a374a;
+      border-radius: 2px;
+    }
+
+    scrollbarbutton {
+      -moz-appearance: none !important;
+      background-color: #394c68;
+    }
+
+    /* 隐藏上下箭头 */
+    scrollbarbutton {
+      display: none !important;
+    }
+
+    /* 纵向滚动条宽度 */
+    /* scrollbar[orient="vertical"] {
+        min-width: 15px !important;
+      }*/
+  }
+}
+
+.fullSrceenBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 16;
+}
+
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2000;
+
+  .cimg {
+    width: 300px;
+    line-height: 40px;
+    text-align: center;
+    padding-top: 50px;
+    font-size: 14px;
+    color: #ccc;
+
+    ::v-deep {
+      .el-progress {
+        .el-progress-circle {
+          width: 80px;
+          height: 80px;
+        }
+        .el-progress__text {
+          font-size: 14px !important;
+        }
+      }
+    }
+  }
+  .cbtn {
+    margin-left: 100px;
+    margin-top: 20px;
+    width: 100px;
+    height: 30px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    color: #ccc;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    &:hover {
+      border: 1px solid #fff;
+      color: #fff;
+    }
+  }
+  // background-size: 100px;
+}
+
+.mprBox {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: $popZIndex;
+
+  .mprLayer {
+    width: 391px;
+    height: 152px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    padding: 20px 20px 20px 28px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    font-size: 14px;
+    &.done {
+      .title {
+        color: #44d7b6;
+        .title_icon {
+          background-image: url(~@/assets/images/done.png);
+        }
+      }
+    }
+
+    .title {
+      position: relative;
+      padding-left: 40px;
+      line-height: 30px;
+      color: #3b8be4;
+
+      // before
+      .title_icon {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 30px;
+        height: 30px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(~@/assets/images/loading.png);
+      }
+
+      // after
+      .close {
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+        top: 10px;
+        width: 10px;
+        height: 10px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(~@/assets/images/close4.png);
+      }
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: #6c6966;
+
+      .el-progress {
+        margin-top: 16px;
+      }
+      ::v-deep {
+        .el-progress.success {
+          .el-progress-bar .el-progress-bar__inner {
+            background-color: #44d7b6;
+          }
+        }
+      }
+      .progress-info {
+        margin-top: 5px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+      }
+      p {
+        margin-top: 13px;
+      }
+    }
+  }
+
+  .shdow {
+    position: absolute;
+    // background-color: #000;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: 2px solid #1e252f;
+  }
+}
+#minBox {
+  z-index: $popZIndex;
+  position: absolute;
+  background-color: transparent;
+  dl {
+    height: 26px;
+    line-height: 26px;
+    border-radius: 3px 3px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(180deg, #ebebeb 0%, #cfcfcf 100%);
+    padding: 0 14px;
+    cursor: move;
+    dt {
+      color: #333333;
+      font-weight: 500;
+      font-size: 14px;
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    dd {
+      width: 14px;
+      height: 14px;
+      margin-left: 10px;
+      cursor: pointer;
+      background-image: url(~@/assets/images/close5.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+  .corner {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    z-index: 9999;
+    background-color: transparent;
+    &.corner1 {
+      left: -10px;
+      top: -10px;
+      cursor: nw-resize;
+    }
+    &.corner2 {
+      right: -10px;
+      top: -10px;
+      cursor: ne-resize;
+    }
+    &.corner3 {
+      right: -10px;
+      bottom: -10px;
+      cursor: se-resize;
+    }
+    &.corner4 {
+      left: -10px;
+      bottom: -10px;
+      cursor: sw-resize;
+    }
+  }
+}

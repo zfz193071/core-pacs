@@ -1,0 +1,623 @@
+var VR_PRESET = [
+  {
+    name: "CT-AAA",
+    ambient: "0.1",
+    diffuse: "0.9",
+    specular: "0.2",
+    specularPower: "10",
+    interpolation: "1",
+    shade: "1",
+    colorTransfer: {
+      num: "6",
+      pixelValue: "-3024 143.556 166.222 214.389 419.736 3071 ",
+      color:
+        "(0,0,0) (0.615686,0.356863,0.184314) (0.882353,0.603922,0.290196) (1,1,1) (1,0.937033,0.954531) (0.827451,0.658824,1) ",
+    },
+    scalarOpacity: {
+      num: "6",
+      pixelValue: "-3024 143.556 166.222 214.389 419.736 3071 ",
+      opacity: "0 0 0.686275 0.696078 0.833333 0.803922 ",
+    },
+    gradientOpacity: {
+      num: "2",
+      pixelValue: "0 255 ",
+      opacity: "1 1 ",
+    },
+  },
+  {
+    name: "CT-AAA2",
+    ambient: "0.1",
+    diffuse: "0.9",
+    specular: "0.2",
+    specularPower: "10",
+    interpolation: "1",
+    shade: "1",
+    colorTransfer: {
+      num: "8",
+      pixelValue: "-3024 129.542 145.244 157.02 169.918 395.575 1578.73 3071 ",
+      color:
+        "(0,0,0) (0.54902,0.25098,0.14902) (0.6,0.627451,0.843137) (0.890196,0.47451,0.6) (0.992157,0.870588,0.392157) (1,0.886275,0.658824) (1,0.829256,0.957922) (0.827451,0.658824,1) ",
+    },
+    scalarOpacity: {
+      num: "8",
+      pixelValue: "-3024 129.542 145.244 157.02 169.918 395.575 1578.73 3071 ",
+      opacity: "0 0 0.166667 0.5 0.627451 0.8125 0.8125 0.8125 ",
+    },
+    gradientOpacity: {
+      num: "2",
+      pixelValue: "0 255 ",
+      opacity: "1 1 ",
+    },
+  },
+  {
+    name: "CT-Bone",
+    ambient: "0.1",
+    diffuse: "0.9",
+    specular: "0.2",
+    specularPower: "10",
+    interpolation: "1",
+    shade: "1",
+    colorTransfer: {
+      num: "4",
+      pixelValue: "-3024 -16.4458 641.385 3071 ",
+      color:
+        "(0,0,0) (0.729412,0.254902,0.301961) (0.905882,0.815686,0.552941) (1,1,1) ",
+    },
+    scalarOpacity: {
+      num: "4",
+      pixelValue: "-3024 -16.4458 641.385 3071 ",
+      opacity: "0 0 0.715686 0.705882 ",
+    },
+    gradientOpacity: {
+      num: "2",
+      pixelValue: "0 255 ",
+      opacity: "1 1 ",
+    },
+  },
+  {
+    name: "CT-Bones",
+    ambient: "0.2",
+    diffuse: "1",
+    specular: "0",
+    specularPower: "1",
+    interpolation: "1",
+    shade: "1",
+    colorTransfer: {
+      num: "5",
+      pixelValue: "-1000 -488 463.28 659.15 953 ",
+      color:
+        "(0.3,0.3,1) (0.3,1,0.3) (1,0,0) (1,0.912535,0.0374849) (1,0.3,0.3) ",
+    },
+    scalarOpacity: {
+      num: "4",
+      pixelValue: "-1000 152.19 278.93 952 ",
+      opacity: "0 0 0.190476 0.2 ",
+    },
+    gradientOpacity: {
+      num: "1",
+      pixelValue: "0 ",
+      opacity: "1 ",
+    },
+  },
+  {
+    name: "CT-Cardiac",
+    ambient: "0.1",
+    diffuse: "0.9",
+    specular: "0.2",
+    specularPower: "10",
+    interpolation: "1",
+    shade: "1",
+    colorTransfer: {
+      num: "6",
+      pixelValue: "-3024 -77.6875 94.9518 179.052 260.439 3071 ",
+      color:
+        "(0,0,0) (0.54902,0.25098,0.14902) (0.882353,0.603922,0.290196) (1,0.937033,0.954531) (0.615686,0,0) (0.827451,0.658824,1) ",
+    },
+    scalarOpacity: {
+      num: "6",
+      pixelValue: "-3024 -77.6875 94.9518 179.052 260.439 3071 ",
+      opacity: "0 0 0.285714 0.553571 0.848214 0.875 ",
+    },
+    gradientOpacity: {
+      num: "2",
+      pixelValue: "0 255 ",
+      opacity: "1 1 ",
+    },
+  },
+  {
+    name: "CT-Cardiac2",
+    ambient: "0.1",
+    diffuse: "0.9",
+    specular: "0.2",
+    specularPower: "10",
+    interpolation: "1",
+    shade: "1",
+    colorTransfer: {
+      num: "6",
+      pixelValue: "-3024 42.8964 163.488 277.642 1587 3071 ",
+      color:
+        "(0,0,0) (0.54902,0.25098,0.14902) (0.917647,0.639216,0.0588235) (1,0.878431,0.623529) (1,1,1) (0.827451,0.658824,1) ",
+    },
+    scalarOpacity: {
+      num: "6",
+      pixelValue: "-3024 42.8964 163.488 277.642 1587 3071 ",
+      opacity: "0 0 0.428571 0.776786 0.754902 0.754902 ",
+    },
+    gradientOpacity: {
+      num: "2",
+      pixelValue: "0 255 ",
+      opacity: "1 1 ",
+    },
+  },
+  {
+    name: "CT-Cardiac3",
+    ambient: "0.1",
+    diffuse: "0.9",
+    specular: "0.2",
+    specularPower: "10",
+    interpolation: "1",
+    shade: "1",
+    colorTransfer: {
+      num: "7",
+      pixelValue: "-3024 -86.9767 45.3791 139.919 347.907 1224.16 3071 ",
+      color:
+        "(0,0,0) (0,0.25098,1) (1,0,0) (1,0.894893,0.894893) (1,1,0.25098) (1,1,1) (0.827451,0.658824,1) ",
+    },
+    scalarOpacity: {
+      num: "7",
+      pixelValue: "-3024 -86.9767 45.3791 139.919 347.907 1224.16 3071 ",
+      opacity: "0 0 0.169643 0.589286 0.607143 0.607143 0.616071 ",
+    },
+    gradientOpacity: {
+      num: "2",
+      pixelValue: "0 255 ",
+      opacity: "1 1 ",
+    },
+  },
+  {
+    name: "CT-Chest-CE",
+    ambient: "0.1",
+    diffuse: "0.9",
+    specular: "0.2",
+    specularPower: "10",
+    interpolation: "1",
+    shade: "1",
+    colorTransfer: {
+      num: "5",
+      pixelValue: "-3024 67.0106 251.105 439.291 3071 ",
+      color:
+        "(0,0,0) (0.54902,0.25098,0.14902) (0.882353,0.603922,0.290196) (1,0.937033,0.954531) (0.827451,0.658824,1) ",
+    },
+    scalarOpacity: {
+      num: "5",
+      pixelValue: "-3024 67.0106 251.105 439.291 3071 ",
+      opacity: "0 0 0.446429 0.625 0.616071 ",
+    },
+    gradientOpacity: {
+      num: "2",
+      pixelValue: "0 255 ",
+      opacity: "1 1 ",
+    },
+  },
+  {
+    name: "CT-Chest-Vs",
+    ambient: "0.2",
+    diffuse: "1",
+    specular: "0",
+    specularPower: "1",
+    interpolation: "1",
+    shade: "1",
+    colorTransfer: {
+      num: "5",
+      pixelValue: "-3024 -1278.35 22.8277 439.291 3071 ",
+      color:
+        "(0,0,0) (0.54902,0.25098,0.14902) (0.882353,0.603922,0.290196) (1,0.937033,0.954531) (0.827451,0.658824,1) ",
+    },
+    scalarOpacity: {
+      num: "5",
+      pixelValue: "-3024 -1278.35 22.8277 439.291 3071 ",
+      opacity: "0 0 0.428571 0.625 0.616071 ",
+    },
+    gradientOpacity: {
+      num: "2",
+      pixelValue: "0 255 ",
+      opacity: "1 1 ",
+    },
+  },
+  {
+    name: "CT-Coronary-A1",
+    ambient: "0.2",
+    diffuse: "1",
+    specular: "0",
+    specularPower: "1",
+    interpolation: "1",
+    shade: "0",
+    colorTransfer: {
+      num: "6",
+      pixelValue: "-2048 136.47 159.215 318.43 478.693 3661 ",
+      color:
+        "(0,0,0) (0,0,0) (0.159804,0.159804,0.159804) (0.764706,0.764706,0.764706) (1,1,1) (1,1,1) ",
+    },
+    scalarOpacity: {
+      num: "6",
+      pixelValue: "-2048 136.47 159.215 318.43 478.693 3661 ",
+      opacity: "0 0 0.258929 0.571429 0.776786 1 ",
+    },
+    gradientOpacity: {
+      num: "2",
+      pixelValue: "0 255 ",
+      opacity: "1 1 ",
+    },
+  },
+  {
+    name: "CT-Coronary-A2",
+    ambient: "0.2",
+    diffuse: "1",
+    specular: "0",
+    specularPower: "1",
+    interpolation: "1",
+    shade: "1",
+    colorTransfer: {
+      num: "7",
+      pixelValue: "-2048 142.677 145.016 192.174 217.24 384.347 3661 ",
+      color:
+        "(0,0,0) (0,0,0) (0.615686,0,0.0156863) (0.909804,0.454902,0) (0.972549,0.807843,0.611765) (0.909804,0.909804,1) (1,1,1) ",
+    },
+    scalarOpacity: {
+      num: "7",
+      pixelValue: "-2048 142.677 145.016 192.174 217.24 384.347 3661 ",
+      opacity: "0 0 0.116071 0.5625 0.776786 0.830357 0.830357 ",
+    },
+    gradientOpacity: {
+      num: "2",
+      pixelValue: "0 255 ",
+      opacity: "1 1 ",
+    },
+  },
+  {
+    name: "CT-Coronary-A3",
+    ambient: "0.1",
+    diffuse: "0.9",
+    specular: "0.2",
+    specularPower: "10",
+    interpolation: "1",
+    shade: "1",
+    colorTransfer: {
+      num: "7",
+      pixelValue: "-2048 128.643 129.982 173.636 255.884 584.878 3661 ",
+      color:
+        "(0,0,0) (0,0,0) (0.615686,0,0.0156863) (0.909804,0.454902,0) (0.886275,0.886275,0.886275) (0.968627,0.968627,0.968627) (1,1,1) ",
+    },
+    scalarOpacity: {
+      num: "7",
+      pixelValue: "-2048 128.643 129.982 173.636 255.884 584.878 3661 ",
+      opacity: "0 0 0.0982143 0.669643 0.857143 0.866071 1 ",
+    },
+    gradientOpacity: {
+      num: "2",
+      pixelValue: "0 255 ",
+      opacity: "1 1 ",
+    },
+  },
+  {
+    name: "CT-Cropped",
+    ambient: "0.2",
+    diffuse: "1",
+    specular: "0",
+    specularPower: "1",
+    interpolation: "1",
+    shade: "0",
+    colorTransfer: {
+      num: "5",
+      pixelValue: "-2048 -451 -450 1050 3661 ",
+      color: "(0,0,0) (0,0,0) (0.0556356,0.0556356,0.0556356) (1,1,1) (1,1,1) ",
+    },
+    scalarOpacity: {
+      num: "5",
+      pixelValue: "-2048 -451 -450 1050 3661 ",
+      opacity: "0 0 1 1 1 ",
+    },
+    gradientOpacity: {
+      num: "2",
+      pixelValue: "0 255 ",
+      opacity: "1 1 ",
+    },
+  },
+  {
+    name: "CT-Fat",
+    ambient: "0.2",
+    diffuse: "1",
+    specular: "0",
+    specularPower: "1",
+    interpolation: "1",
+    shade: "0",
+    colorTransfer: {
+      num: "9",
+      pixelValue: "-1000 -497.5 -99 -76.946 -65.481 83.89 463.28 659.15 2952 ",
+      color:
+        "(0.3,0.3,1) (0.3,1,0.3) (0,0,1) (0,1,0) (0.835431,0.888889,0.0165387) (1,0,0) (1,0,0) (1,0.912535,0.0374849) (1,0.300267,0.299886) ",
+    },
+    scalarOpacity: {
+      num: "7",
+      pixelValue: "-1000 -100 -99 -60 -59 101.2 952 ",
+      opacity: "0 0 0.15 0.15 0 0 0 ",
+    },
+    gradientOpacity: {
+      num: "2",
+      pixelValue: "0 988 ",
+      opacity: "1 1 ",
+    },
+  },
+  {
+    name: "CT-Liver-Vs",
+    ambient: "0.2",
+    diffuse: "1",
+    specular: "0",
+    specularPower: "1",
+    interpolation: "1",
+    shade: "0",
+    colorTransfer: {
+      num: "7",
+      pixelValue: "-2048 149.113 157.884 339.96 388.526 1197.95 3661 ",
+      color:
+        "(0,0,0) (0,0,0) (0.501961,0.25098,0) (0.695386,0.59603,0.36886) (0.854902,0.85098,0.827451) (1,1,1) (1,1,1) ",
+    },
+    scalarOpacity: {
+      num: "7",
+      pixelValue: "-2048 149.113 157.884 339.96 388.526 1197.95 3661 ",
+      opacity: "0 0 0.482143 0.660714 0.830357 0.839286 0.848214 ",
+    },
+    gradientOpacity: {
+      num: "2",
+      pixelValue: "0 255 ",
+      opacity: "1 1 ",
+    },
+  },
+  {
+    name: "CT-Lung",
+    ambient: "0.2",
+    diffuse: "1",
+    specular: "0",
+    specularPower: "1",
+    interpolation: "1",
+    shade: "1",
+    colorTransfer: {
+      num: "6",
+      pixelValue: "-1000 -600 -530 -460 -400 2952 ",
+      color:
+        "(0.3,0.3,1) (0,0,1) (0.134704,0.781726,0.0724558) (0.929244,1,0.109473) (0.888889,0.254949,0.0240258) (1,0.3,0.3) ",
+    },
+    scalarOpacity: {
+      num: "6",
+      pixelValue: "-1000 -600 -599 -400 -399 2952 ",
+      opacity: "0 0 0.15 0.15 0 0 ",
+    },
+    gradientOpacity: {
+      num: "2",
+      pixelValue: "0 988 ",
+      opacity: "1 1 ",
+    },
+  },
+  {
+    name: "CT-MIP",
+    ambient: "0.1",
+    diffuse: "0.9",
+    specular: "0.2",
+    specularPower: "10",
+    interpolation: "1",
+    shade: "1",
+    colorTransfer: {
+      num: "4",
+      pixelValue: "-3024 -637.62 700 3071 ",
+      color: "(0,0,0) (1,1,1) (1,1,1) (1,1,1) ",
+    },
+    scalarOpacity: {
+      num: "4",
+      pixelValue: "-3024 -637.62 700 3071 ",
+      opacity: "0 0 1 1 ",
+    },
+    gradientOpacity: {
+      num: "2",
+      pixelValue: "0 255 ",
+      opacity: "1 1 ",
+    },
+  },
+  {
+    name: "CT-Muscle",
+    ambient: "0.1",
+    diffuse: "0.9",
+    specular: "0.2",
+    specularPower: "10",
+    interpolation: "1",
+    shade: "1",
+    colorTransfer: {
+      num: "5",
+      pixelValue: "-3024 -155.407 217.641 419.736 3071 ",
+      color:
+        "(0,0,0) (0.54902,0.25098,0.14902) (0.882353,0.603922,0.290196) (1,0.937033,0.954531) (0.827451,0.658824,1) ",
+    },
+    scalarOpacity: {
+      num: "5",
+      pixelValue: "-3024 -155.407 217.641 419.736 3071 ",
+      opacity: "0 0 0.676471 0.833333 0.803922 ",
+    },
+    gradientOpacity: {
+      num: "2",
+      pixelValue: "0 255 ",
+      opacity: "1 1 ",
+    },
+  },
+  {
+    name: "CT-Pulmonary-A",
+    ambient: "0.2",
+    diffuse: "1",
+    specular: "0",
+    specularPower: "1",
+    interpolation: "1",
+    shade: "1",
+    colorTransfer: {
+      num: "7",
+      pixelValue: "-2048 -568.625 -364.081 -244.813 18.2775 447.798 3592.73 ",
+      color:
+        "(0,0,0) (0,0,0) (0.396078,0.301961,0.180392) (0.611765,0.352941,0.0705882) (0.843137,0.0156863,0.156863) (0.752941,0.752941,0.752941) (1,1,1) ",
+    },
+    scalarOpacity: {
+      num: "7",
+      pixelValue: "-2048 -568.625 -364.081 -244.813 18.2775 447.798 3592.73 ",
+      opacity: "0 0 0.0714286 0.401786 0.607143 0.830357 0.839286 ",
+    },
+    gradientOpacity: {
+      num: "2",
+      pixelValue: "0 255 ",
+      opacity: "1 1 ",
+    },
+  },
+  {
+    name: "CT-Soft-Tissue",
+    ambient: "0.2",
+    diffuse: "1",
+    specular: "0",
+    specularPower: "1",
+    interpolation: "1",
+    shade: "0",
+    colorTransfer: {
+      num: "5",
+      pixelValue: "-2048 -167.01 -160 240 3661 ",
+      color: "(0,0,0) (0,0,0) (0.0556356,0.0556356,0.0556356) (1,1,1) (1,1,1) ",
+    },
+    scalarOpacity: {
+      num: "5",
+      pixelValue: "-2048 -167.01 -160 240 3661 ",
+      opacity: "0 0 1 1 1 ",
+    },
+    gradientOpacity: {
+      num: "2",
+      pixelValue: "0 255 ",
+      opacity: "1 1 ",
+    },
+  },
+  {
+    name: "MR-Angio",
+    ambient: "0.2",
+    diffuse: "1",
+    specular: "0",
+    specularPower: "1",
+    interpolation: "1",
+    shade: "1",
+    colorTransfer: {
+      num: "6",
+      pixelValue: "-2048 151.354 158.279 190.112 200.873 3661 ",
+      color:
+        "(0,0,0) (0,0,0) (0.74902,0.376471,0) (1,0.866667,0.733333) (0.937255,0.937255,0.937255) (1,1,1) ",
+    },
+    scalarOpacity: {
+      num: "6",
+      pixelValue: "-2048 151.354 158.279 190.112 200.873 3661 ",
+      opacity: "0 0 0.4375 0.580357 0.732143 0.741071 ",
+    },
+    gradientOpacity: {
+      num: "2",
+      pixelValue: "0 255 ",
+      opacity: "1 1 ",
+    },
+  },
+  {
+    name: "MR-Default",
+    ambient: "0.2",
+    diffuse: "1",
+    specular: "0",
+    specularPower: "1",
+    interpolation: "1",
+    shade: "1",
+    colorTransfer: {
+      num: "6",
+      pixelValue: "0 20 40 120 220 1024 ",
+      color:
+        "(0,0,0) (0.168627,0,0) (0.403922,0.145098,0.0784314) (0.780392,0.607843,0.380392) (0.847059,0.835294,0.788235) (1,1,1) ",
+    },
+    scalarOpacity: {
+      num: "6",
+      pixelValue: "0 20 40 120 220 1024 ",
+      opacity: "0 0 0.15 0.3 0.375 0.5 ",
+    },
+    gradientOpacity: {
+      num: "2",
+      pixelValue: "0 255 ",
+      opacity: "1 1 ",
+    },
+  },
+  {
+    name: "MR-MIP",
+    ambient: "0.2",
+    diffuse: "1",
+    specular: "0",
+    specularPower: "1",
+    interpolation: "1",
+    shade: "0",
+    colorTransfer: {
+      num: "4",
+      pixelValue: "0 98.3725 416.637 2800 ",
+      color: "(1,1,1) (1,1,1) (1,1,1) (1,1,1) ",
+    },
+    scalarOpacity: {
+      num: "4",
+      pixelValue: "0 98.3725 416.637 2800 ",
+      opacity: "0 0 1 1 ",
+    },
+    gradientOpacity: {
+      num: "2",
+      pixelValue: "0 255 ",
+      opacity: "1 1 ",
+    },
+  },
+  {
+    name: "MR-T2-Brain",
+    ambient: "0.3",
+    diffuse: "0.6",
+    specular: "0.5",
+    specularPower: "40",
+    interpolation: "1",
+    shade: "1",
+    colorTransfer: {
+      num: "4",
+      pixelValue: "0 98.7223 412.406 641 ",
+      color:
+        "(0,0,0) (0.956863,0.839216,0.192157) (0,0.592157,0.807843) (1,1,1) ",
+    },
+    scalarOpacity: {
+      num: "5",
+      pixelValue: "0 36.05 218.302 412.406 641 ",
+      opacity: "0 0 0.171429 1 1 ",
+    },
+    gradientOpacity: {
+      num: "1",
+      pixelValue: "0 ",
+      opacity: "1 ",
+    },
+  },
+  {
+    name: "DTI-FA-Brain",
+    ambient: "0.3",
+    diffuse: "0.9",
+    specular: "0.5",
+    specularPower: "40",
+    interpolation: "1",
+    shade: "1",
+    colorTransfer: {
+      num: "5",
+      pixelValue: "0 0.24974 0.49949 0.7492 0.995 ",
+      color: "(1,0,0) (0.4941,1,0) (0,0.9882,1) (0.51764,0,1) (1,0,0) ",
+    },
+    scalarOpacity: {
+      num: "6",
+      pixelValue: "0 0.3501 0.49379 0.6419 0.992 0.995 ",
+      opacity: "0 0.0158 0.7619 1 1 0 ",
+    },
+    gradientOpacity: {
+      num: "1",
+      pixelValue: "0 ",
+      opacity: "1 ",
+    },
+  },
+];
+export default VR_PRESET;

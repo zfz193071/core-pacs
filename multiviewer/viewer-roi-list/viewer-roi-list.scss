@@ -1,0 +1,148 @@
+@import "~@/assets/css/common";
+
+#roiList {
+  width: 300px;
+  position: absolute;
+  right: 0;
+  top: $toolbarHeight;
+  font-size: 12px;
+  overflow: hidden;
+  background-color: var(--themGary);
+  z-index: $popZIndex;
+  box-sizing: border-box;
+  border-left: 1px solid var(--gary2);
+  border-right: 1px solid var(--gary2);
+  &.vertical {
+    top: $toolbarVerticalHeight;
+  }
+
+  .roiHead {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    background: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+
+    p {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--defaultfontColor);
+    }
+
+    span {
+      width: 15px;
+      height: 15px;
+      display: block;
+      cursor: pointer;
+      background-size: contain;
+    }
+  }
+
+  div.border {
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    top: 39px;
+    left: 0;
+    background-color: var(--gary2);
+  }
+
+  section {
+    background: inherit;
+    width: inherit;
+    height: calc(100% - 40px);
+    padding: 10px;
+    box-sizing: border-box;
+
+    ul {
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+
+      li {
+        height: 30px;
+        line-height: 30px;
+        color: var(--defaultfontColor2);
+        border-radius: 3px;
+        border: 1px solid var(--gary2);
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        margin-bottom: 2px;
+        background-color: var(--seriesListItemBg);
+        &:hover {
+          border: 1px solid var(--navHoverColor);
+          position: relative;
+          .index {
+            cursor: pointer;
+            color: var(--navHoverColor);
+            background-color: var(--navHoverColor);
+
+            &:before,
+            &:after {
+              position: absolute;
+              content: "";
+              background-color: #eeeeee;
+              left: 6px;
+              top: 11px;
+              width: 1px;
+              height: 8px;
+            }
+            &:before {
+              transform: rotate(45deg);
+            }
+            &:after {
+              transform: rotate(-45deg);
+            }
+          }
+          .namespace input[type="text"] {
+            background-color: var(--navHoverColor4);
+          }
+        }
+
+        .index {
+          width: 14px;
+          height: inherit;
+          line-height: inherit;
+          text-align: center;
+          background-color: var(--gary4);
+        }
+        .namespace {
+          width: 72px;
+          height: inherit;
+          line-height: 27px;
+          padding-left: 6px;
+          input[type="text"] {
+            width: 68px;
+            height: calc(100% - 8px);
+            border: none;
+            padding-left: 4px;
+            color: var(--defaultfontColor2);
+            background-color: inherit;
+          }
+        }
+        .type {
+          width: 60px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  #draggingUp {
+    cursor: zoom-out;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #999999;
+  }
+}

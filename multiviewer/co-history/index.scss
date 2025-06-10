@@ -1,0 +1,76 @@
+@import "~@/assets/css/common";
+
+#historyList,
+#downloadList {
+  position: absolute;
+  width: 1000px;
+  right: 0;
+  background: var(--themGary);
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  z-index: $popZIndex;
+  color: var(--defaultfontColor);
+  box-sizing: border-box;
+  border-left: 1px solid var(--gary2);
+  border-right: 1px solid var(--gary2);
+  p {
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    line-height: 40px;
+    background-color: inherit;
+    cursor: move;
+    position: relative;
+    span {
+      width: 15px;
+      height: 15px;
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 12px;
+      cursor: pointer;
+      background-size: contain;
+    }
+  }
+  div.border {
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    top: 40px;
+    left: 0;
+    background-color: var(--gary2);
+  }
+
+  .history-content {
+    height: calc(100% - 40px);
+    .title {
+      font-size: 12px;
+      line-height: 17px;
+      margin: 15px 0;
+    }
+
+    .btns {
+      display: flex;
+      justify-content: right;
+      margin-top: 21px;
+
+      button {
+        font-size: 12px;
+        padding: 7px 11px;
+        background: #3b8be4;
+        border-radius: 3px;
+        line-height: 17px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        color: #ffffff;
+      }
+
+      .disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  }
+}

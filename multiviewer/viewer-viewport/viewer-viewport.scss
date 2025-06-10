@@ -1,0 +1,231 @@
+.viewer-viewport {
+  position: absolute;
+  //overflow: hidden;
+  box-sizing: border-box;
+  background-color: #000000;
+
+  .icon-select {
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    transform: translateY(-50%) rotate(-90deg);
+    width: 14px;
+    height: 14px;
+    z-index: 15;
+    background-image: url(~@/assets/images/select2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    &:hover {
+      background-image: url(~@/assets/images/select2-hover.png);
+
+      + .series {
+        display: block;
+      }
+    }
+  }
+  .sync-select {
+    position: absolute;
+    left: 2px;
+    bottom: 5px;
+    width: 14px;
+    height: 14px;
+    z-index: 14;
+    &.is-disabled {
+      ::v-deep {
+        .el-checkbox__inner {
+          background-color: #8b8b8b;
+        }
+      }
+    }
+  }
+
+  // .synic-select {
+  //   cursor: pointer;
+  //   position: absolute;
+  //   left: 0;
+  //   bottom: 0px;
+  //   z-index: 14;
+
+  //   .el-checkbox {
+  //     margin-right: 8px;
+
+  //     &.is-disabled {
+  //       ::v-deep {
+  //         .el-checkbox__inner {
+  //           background-color: #8b8b8b;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+
+  .series {
+    display: none;
+    z-index: 1000;
+    position: relative;
+    width: 100%;
+    color: #ffffff;
+    font-size: 12px;
+    height: 22px;
+    line-height: 22px;
+    box-sizing: border-box;
+    padding: 0 6px;
+    background-color: #1f1f1f;
+    border: 2px solid rgba(59, 139, 228, 0.4);
+
+    &:hover {
+      display: block;
+
+      .options {
+        display: block;
+      }
+    }
+
+    // 公共类
+    .mix-el {
+      flex-shrink: 0;
+      width: 14px;
+      height: 14px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin-right: 7px;
+
+      &:hover,
+      &.mixed {
+        background-image: url(~@/assets/images/selected.png);
+      }
+    }
+
+    .select-container {
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+
+      .modality {
+        margin-right: 5px;
+      }
+
+      .desc {
+        width: auto;
+        max-width: 170px;
+      }
+
+      .symbol {
+        margin: 0 8px;
+      }
+    }
+
+    .options {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      left: 0;
+      z-index: 1000;
+      background-color: #333333;
+      display: none;
+
+      .item {
+        position: relative;
+        cursor: pointer;
+        width: 100%;
+        height: 32px;
+        box-sizing: border-box;
+        padding: 6px 0 6px 5px;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        border: 1px solid transparent;
+
+        &:hover,
+        &.selected {
+          border-color: #505e7c;
+          background: rgba(59, 139, 228, 0.32);
+        }
+
+        &.border {
+          border-bottom: 1px solid #757575;
+        }
+
+        .modality {
+          margin-right: 5px;
+          border: 1px solid transparent;
+          padding: 0 3px;
+          border-radius: 3px;
+          line-height: 16px;
+
+          &.CT {
+            border-color: #3b8be4;
+            color: #3b8be4;
+          }
+
+          &.MR {
+            border-color: #a4a535;
+            color: #a4a535;
+          }
+
+          &.PT {
+            border-color: #5cb984;
+            color: #5cb984;
+          }
+
+          &.NM {
+            border-color: #b620e0;
+            color: #b620e0;
+          }
+        }
+      }
+    }
+  }
+
+  ::v-deep {
+    .el-switch {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      z-index: 15;
+
+      .el-switch__core {
+        width: 40px !important;
+        height: 14px;
+      }
+
+      .el-switch__label {
+        position: absolute;
+        color: #eeeeee;
+        height: 14px;
+        display: flex;
+        align-content: center;
+
+        span {
+          font-size: 10px;
+          line-height: 14px;
+        }
+      }
+
+      .el-switch__core:after {
+        width: 10px;
+        height: 10px;
+      }
+
+      .el-switch__label--right {
+        z-index: 1;
+        right: 6px;
+      }
+
+      .el-switch__label--left {
+        display: none;
+        z-index: 1;
+        left: 6px;
+      }
+    }
+
+    .el-switch.is-checked .el-switch__core::after {
+      margin-left: -11px;
+    }
+  }
+}

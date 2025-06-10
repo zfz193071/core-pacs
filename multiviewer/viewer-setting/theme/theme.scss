@@ -1,0 +1,125 @@
+@import "~@/assets/css/mixin";
+.theme {
+  width: 100%;
+  height: 100%;
+  color: var(--defaultfontColor2);
+  display: flex;
+  flex-direction: column;
+
+  .color {
+    position: relative;
+    border: 1px solid var(--gary2);
+    box-sizing: border-box;
+    padding: 10px 20px;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+    .left {
+      display: flex;
+      align-items: center;
+    }
+
+    .box-title {
+      position: absolute;
+      left: 17px;
+      top: -9px;
+      background-color: var(--gary4);
+      text-align: center;
+    }
+
+    .item {
+      width: 30px;
+      height: auto;
+      text-align: center;
+      &:hover,
+      &.selected {
+        cursor: pointer;
+        .bg {
+          border: 1px solid var(--navHoverColor);
+        }
+      }
+
+      .bg {
+        box-sizing: border-box;
+        width: 20px;
+        height: 20px;
+        margin: 0 auto;
+      }
+    }
+
+    ::v-deep {
+      @include resetCheckBox(#cccccc);
+      .el-checkbox__label {
+        color: var(--defaultfontColor2);
+        font-weight: normal;
+        font-size: 12px;
+      }
+      // checkbox 勾选字体颜色
+      .el-checkbox__inner::after {
+        border-color: #333333;
+      }
+      .el-checkbox__inner::before {
+        background-color: #000000;
+      }
+    }
+  }
+
+  .series-list-position {
+    position: relative;
+    margin-top: 30px;
+    border: 1px solid var(--gary2);
+    box-sizing: border-box;
+    padding: 10px 20px;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    .box-title {
+      position: absolute;
+      left: 17px;
+      top: -9px;
+      background-color: var(--gary4);
+      text-align: center;
+    }
+
+    .item {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      // width: 50px;
+      height: 65px;
+      margin-right: 40px;
+      box-sizing: border-box;
+      &.isActive {
+        .image {
+          border-color: #3b8be4;
+        }
+      }
+
+      .image {
+        width: 50px;
+        height: 40px;
+        box-sizing: border-box;
+        border: 1px solid transparent;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+  .scale {
+    ::v-deep {
+      @include resetSelect(var(--defaultfontColor2));
+    }
+  }
+}

@@ -1,0 +1,365 @@
+/*画笔工具弹窗*/
+#roiEditWindow {
+    position: absolute;
+    width: 48px;
+    height: 510px;
+    background: #333e4e;
+    z-index: 998;
+    border-radius: 4px;
+    top: 289px;
+    left: 201px;
+
+    .boxTitle {
+        height: 16px;
+        margin-top: 3px;
+
+        #roiEditWindowVLine {
+            background-image: url(../../../assets/images/sprite_sheet2.png);
+            background-repeat: repeat;
+            display: inline-block;
+            float: left;
+            height: 16px;
+            width: 22px;
+            margin-left: 5px;
+            background-attachment: scroll;
+            background-position: -200px -850px;
+            cursor: move;
+        }
+
+        #roiEditWindowClose {
+            background-image: url(../../../assets/images/sprite_sheet2.png);
+            background-repeat: repeat;
+            display: inline-block;
+            float: right;
+            height: 16px;
+            width: 22px;
+            margin-right: -8px;
+            background-attachment: scroll;
+            background-position: -250px -850px;
+            cursor: pointer;
+
+            &:hover {
+                background-position: -450px -850px;
+            }
+
+            ;
+        }
+    }
+
+    .boxContent {
+        width: 40px;
+        height: 476px;
+        border-radius: 4px;
+        margin: -3px 4px;
+        background-color: #3d495b;
+
+        a {
+            margin: 0 auto;
+            cursor: pointer
+        }
+    }
+}
+
+/* icon */
+@charset "utf-8";
+$leftToolBarIconHeight : 36px;
+$leftToolBarIconWidth : 36px;
+
+.Arrow {
+    background-image: url(../../../assets/images/sprite_sheet2.png);
+    background-repeat: repeat;
+    display: block;
+    height: $leftToolBarIconHeight;
+    width: $leftToolBarIconWidth;
+    background-attachment: scroll;
+    background-position: -200px -700px;
+
+    &:hover {
+        background-position: -400px -700px;
+    }
+}
+
+.ArrowSelect {
+    background-image: url(../../../assets/images/sprite_sheet2.png);
+    background-repeat: repeat;
+    display: block;
+    height: $leftToolBarIconHeight;
+    width: $leftToolBarIconWidth;
+    background-attachment: scroll;
+    background-position: 0 -700px;
+}
+
+.Ruler {
+    background-image: url(../../../assets/images/sprite_sheet2.png);
+    background-repeat: repeat;
+    display: block;
+    height: $leftToolBarIconHeight;
+    width: $leftToolBarIconWidth;
+    background-attachment: scroll;
+    background-position: -300px -700px;
+
+    &:hover {
+        background-position: -500px -700px;
+    }
+}
+
+.RulerSelect {
+    background-image: url(../../../assets/images/sprite_sheet2.png);
+    background-repeat: repeat;
+    display: block;
+    height: $leftToolBarIconHeight;
+    width: $leftToolBarIconWidth;
+    background-attachment: scroll;
+    background-position: -100px -700px;
+}
+
+.Text {
+    background-image: url(../../../assets/images/sprite_sheet2.png);
+    background-repeat: repeat;
+    display: block;
+    height: $leftToolBarIconHeight;
+    width: $leftToolBarIconWidth;
+    background-attachment: scroll;
+    background-position: -350px -700px;
+
+    &:hover {
+        background-position: -550px -700px;
+    }
+}
+
+.TextSelect {
+    background-image: url(../../../assets/images/sprite_sheet2.png);
+    background-repeat: repeat;
+    display: block;
+    height: $leftToolBarIconHeight;
+    width: $leftToolBarIconWidth;
+    background-position: -150px -700px;
+}
+
+.Point {
+    background-image: url(../../../assets/images/sprite_sheet2.png);
+    background-repeat: repeat;
+    display: block;
+    height: $leftToolBarIconHeight;
+    width: $leftToolBarIconWidth;
+    background-attachment: scroll;
+    background-position: -205px -1200px;
+
+    &:hover {
+        background-position: -405px -1200px;
+    }
+}
+
+.PointSelect {
+    background-image: url(../../../assets/images/sprite_sheet2.png);
+    background-repeat: repeat;
+    display: block;
+    height: $leftToolBarIconHeight;
+    width: $leftToolBarIconWidth;
+    background-position: -5px -1200px;
+}
+
+.Rubber {
+    background-image: url(../../../assets/images/sprite_sheet2.png);
+    background-repeat: repeat;
+    display: block;
+    height: $leftToolBarIconHeight;
+    width: $leftToolBarIconWidth;
+    background-position: -200px -750px;
+}
+
+.VOITool {
+    background-image: url(../../../assets/images/sprite_sheet2.png);
+    background-repeat: repeat;
+    display: block;
+    height: $leftToolBarIconHeight;
+    width: $leftToolBarIconWidth;
+    background-attachment: scroll;
+    background-position: -300px -600px;
+
+    &:hover {
+        background-position: -500px -600px;
+    }
+}
+
+.setParam {
+    background-image: url(../../../assets/images/sprite_sheet2.png);
+    background-repeat: repeat;
+    display: block;
+    height: $leftToolBarIconHeight;
+    width: $leftToolBarIconWidth;
+    background-position: -357px -400px;
+
+    &:hover {
+        background-position: -554px -400px;
+    }
+}
+
+.RubberSelect {
+    background-image: url(../../../assets/images/sprite_sheet2.png);
+    background-repeat: repeat;
+    display: block;
+    height: $leftToolBarIconHeight;
+    width: $leftToolBarIconWidth;
+    background-attachment: scroll;
+    background-position: 0 -750px;
+}
+
+.Angle {
+    background-image: url(../../../assets/images/sprite_sheet2.png);
+    background-repeat: repeat;
+    display: block;
+    height: $leftToolBarIconHeight;
+    width: $leftToolBarIconWidth;
+    background-attachment: scroll;
+    background-position: -250px -700px;
+
+    &:hover {
+        background-position: -450px -700px;
+    }
+}
+
+.AngleSelect {
+    background-image: url(../../../assets/images/sprite_sheet2.png);
+    background-repeat: repeat;
+    display: block;
+    height: $leftToolBarIconHeight;
+    width: $leftToolBarIconWidth;
+    background-attachment: scroll;
+    background-position: -50px -700px;
+}
+
+
+.iPenButton {
+    background-image: url(../../../assets/images/sprite_sheet2.png);
+    background-repeat: repeat;
+    display: block;
+    height: $leftToolBarIconHeight;
+    width: $leftToolBarIconWidth;
+    background-attachment: scroll;
+    background-position: -200px -650px;
+
+    &:hover {
+        background-position: -400px -650px;
+    }
+}
+
+.iPenButtonSelect {
+    background-image: url(../../../assets/images/sprite_sheet2.png);
+    background-repeat: repeat;
+    display: block;
+    height: $leftToolBarIconHeight;
+    width: $leftToolBarIconWidth;
+    background-attachment: scroll;
+    background-position: 0 -650px;
+}
+
+.iCircle {
+    background-image: url(../../../assets/images/sprite_sheet2.png);
+    background-repeat: repeat;
+    display: block;
+    height: $leftToolBarIconHeight;
+    width: $leftToolBarIconWidth;
+    background-attachment: scroll;
+    background-position: -250px -650px;
+
+    &:hover {
+        background-position: -450px -650px;
+    }
+}
+
+.iCircleSelect {
+    background-image: url(../../../assets/images/sprite_sheet2.png);
+    background-repeat: repeat;
+    display: block;
+    height: $leftToolBarIconHeight;
+    width: $leftToolBarIconWidth;
+    background-attachment: scroll;
+    background-position: -50px -650px;
+}
+
+.iRect {
+    background-image: url(../../../assets/images/sprite_sheet2.png);
+    background-repeat: repeat;
+    display: block;
+    height: $leftToolBarIconHeight;
+    width: $leftToolBarIconWidth;
+    background-attachment: scroll;
+    background-position: -300px -650px;
+
+    &:hover {
+        background-position: -500px -650px;
+    }
+}
+
+.iRectSelect {
+    background-image: url(../../../assets/images/sprite_sheet2.png);
+    background-repeat: repeat;
+    display: block;
+    height: $leftToolBarIconHeight;
+    width: $leftToolBarIconWidth;
+    background-attachment: scroll;
+    background-position: -100px -650px;
+}
+
+.CurveLine {
+    background-image: url(../../../assets/images/sprite_sheet2.png);
+    background-repeat: repeat;
+    display: block;
+    height: $leftToolBarIconHeight;
+    width: $leftToolBarIconWidth;
+    background-attachment: scroll;
+    background-position: -350px -650px;
+
+    &:hover {
+        background-position: -550px -650px;
+    }
+}
+
+.CurveLineSelect {
+    background-image: url(../../../assets/images/sprite_sheet2.png);
+    background-repeat: repeat;
+    display: block;
+    height: $leftToolBarIconHeight;
+    width: $leftToolBarIconWidth;
+    background-attachment: scroll;
+    background-position: -150px -650px;
+}
+.setColor{
+    height: 30px;
+    width: 30px;
+    margin: 6px auto;
+    border-radius: 2px;
+    position: relative;
+    cursor: pointer;
+    border:1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p{
+        width:24px;
+        height:24px;
+        border-radius: 2px;
+    }
+    &:hover{
+        ul{
+            display: block;
+        }
+    }
+    ul{
+        display: none;
+        position: absolute;
+        top:100%;
+        left:-1px;
+        background-color: #3d495b;
+        width:32px;
+        li{
+            width:30px;
+            height:30px;
+            border:1px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

@@ -1,0 +1,98 @@
+.rgba {
+  width: 395px;
+  height: 54px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  box-sizing: border-box;
+  background: #ebfffb;
+  border: 1px solid #44d7b6;
+  border-radius: 5px;
+  padding-left: 13px;
+  z-index: 1600;
+
+  .icon-state {
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(~@/assets/images/success.png); // 默认成功
+  }
+
+  .layer {
+    width: 345px;
+    border-radius: 4px;
+    color: #44d7b6;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    .ch {
+      max-width: 345px;
+      height: 20px;
+      line-height: 20px;
+    }
+    .en {
+      font-size: 12px;
+      // font-weight: 400;
+      // color: #333333;
+      max-width: 345px;
+      height: 17px;
+      line-height: 17px;
+    }
+  }
+
+  // 不同类型的弹框样式
+  // 失败
+  &.fail {
+    background: #fff1f1;
+    border: 1px solid #ff7272;
+    .icon-state {
+      background-image: url(~@/assets/images/fail.png);
+    }
+    .layer {
+      color: #ff7272;
+    }
+  }
+  // info类型
+  &.info {
+    background: #edf5ff;
+    border: 1px solid #3b8be4;
+    .icon-state {
+      background-image: url(~@/assets/images/info.png);
+    }
+    .layer {
+      color: #3b8be4;
+    }
+  }
+  // 警告
+  &.warn {
+    background: #fff5da;
+    border: 1px solid #f7b500;
+    .icon-state {
+      background-image: url(~@/assets/images/warn.png);
+    }
+    .layer {
+      color: #f7b500;
+    }
+  }
+  // 普通消息
+  &.normal {
+    background: #f2f2f2;
+    border: 1px solid #d8d8d8;
+    .icon-state {
+      background-image: url(~@/assets/images/normal.png);
+    }
+    .layer {
+      color: #333333;
+    }
+  }
+}

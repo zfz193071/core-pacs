@@ -1,0 +1,99 @@
+@import "~@/assets/css/common";
+
+.layerBox {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: transparent;
+  z-index: $popZIndex;
+}
+.layers {
+  position: absolute;
+  top: 30%;
+  min-width: 445px;
+  margin-left: -250px;
+  left: 50%;
+  padding: 12px 20px 15px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 0 3px #42c7f5;
+  -moz-box-shadow: 0 0 3px #42c7f5;
+  box-shadow: 0 0 3px #42c7f5;
+  .icon-warn {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+  }
+  .layers_title {
+    font-size: 14px;
+    width: 100%;
+    height: 20px;
+    color: #3b8be4;
+  }
+  .layers_content {
+    display: flex;
+    align-items: center;
+    line-height: 54px;
+    color: #333333;
+    font-size: 14px;
+    .form-item {
+      display: flex;
+      align-items: center;
+      label {
+        margin-right: 12px;
+      }
+    }
+  }
+  .layers_btn {
+    height: 45px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    input {
+      margin-right: 10px;
+    }
+    div {
+      color: #999999;
+      height: 20px;
+      line-height: 20px;
+    }
+    div.btns {
+      height: 25px;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+      p {
+        width: 70px;
+        height: 30px;
+        line-height: 30px;
+        border-radius: 2px;
+        text-align: center;
+        cursor: pointer;
+      }
+      .confirm {
+        color: #fff;
+        background: #3b8be4;
+        margin-right: 10px;
+      }
+      .cancel {
+        border: 1px solid #d8d8d8;
+        color: #999999;
+        background-color: #ffffff;
+      }
+    }
+    .deleBtns {
+      margin: 0 auto;
+    }
+  }
+}
+.shareCode {
+  min-width: 320px;
+  .layers_btn {
+    justify-content: center;
+  }
+}

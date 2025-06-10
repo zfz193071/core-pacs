@@ -1,0 +1,553 @@
+$leftToolBarIconHeight: 36px;
+$leftToolBarIconWidth: 44px;
+$sprite_sheet: url(../../../assets/images/sprite_sheet2.png);
+@import "~@/assets/css/mixin";
+@import "~@/assets/css/common";
+
+@mixin background_styles($sprite_sheet, $x, $y, $hoverX, $hoverY) {
+  @include background_style_simple($sprite_sheet, $x, $y);
+
+  &:hover {
+    background-position: $hoverX $hoverY;
+  }
+}
+
+@mixin background_style_simple($sprite_sheet, $x, $y) {
+  display: block;
+  background-image: $sprite_sheet;
+  background-position: $x $y;
+  background-repeat: repeat;
+  background-attachment: scroll;
+}
+
+#catcher {
+  position: absolute;
+  // overflow: hidden;
+  border: 2px solid var(--canvasBColor);
+  z-index: 10;
+  box-sizing: border-box;
+  .VR-cursor {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  .VR-window-cursor {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+  .close {
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: -26px;
+    right: -4px;
+    background: url(~@/assets/images/close3.png) no-repeat center;
+    background-size: 22px 22px;
+    cursor: pointer;
+  }
+  .Z {
+    z-index: 950;
+  }
+
+  ._setsuv {
+    opacity: 0.3;
+    width: 22px;
+    height: 20px;
+    background: url(../../../assets/images/setsuv.png) no-repeat center;
+    position: absolute;
+    left: 10px;
+    bottom: 5px;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .back {
+    opacity: 0.5;
+    position: absolute;
+    cursor: pointer;
+    right: 20px;
+    top: 5px;
+    background: url(../../../assets/images/sprite_sheet2.png) no-repeat -50px -1500px;
+    border-radius: 4px;
+    width: 48px;
+    height: 38px;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .play {
+    opacity: 0.5;
+    position: absolute;
+    cursor: pointer;
+    left: 8px;
+    top: 3px;
+    background: url(../../../assets/images/sprite_sheet2.png) no-repeat -250px -1250px;
+    border-radius: 4px;
+    width: 48px;
+    height: 38px;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .stop {
+    opacity: 0.5;
+    position: absolute;
+    cursor: pointer;
+    left: 8px;
+    top: 3px;
+    background: url(../../../assets/images/sprite_sheet2.png) no-repeat -300px -1250px;
+    border-radius: 4px;
+    width: 48px;
+    height: 38px;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .mips {
+    opacity: 0.6;
+    position: absolute;
+    right: 30px;
+    bottom: 5px;
+    display: flex;
+
+    dt {
+      font-size: 14px;
+      margin-right: 10px;
+      color: #576d8a;
+      font-weight: bold;
+    }
+
+    dd {
+      width: 50px;
+      padding-left: 23px;
+      background: url(~@/assets/images/roi.png) no-repeat left -55px;
+      line-height: 18px;
+      font-size: 12px;
+      color: #eeeeee;
+      cursor: pointer;
+      box-sizing: border-box;
+      text-align: left;
+      border-radius: 4px;
+
+      &.base {
+        padding-left: 5px;
+        background: url(~@/assets/images/roi.png) no-repeat -20px -39px;
+      }
+    }
+
+    .max {
+      width: 65px;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .vieBox {
+    opacity: 0.6;
+    position: absolute;
+    right: 30px;
+    bottom: 5px;
+    width: 30px;
+    height: 30px;
+    background-image: url(~@/assets/images/ro.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.sidebar {
+  position: absolute;
+  height: 30%;
+  width: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1px;
+  display: flex;
+  flex-direction: column;
+  &:hover {
+    .scrollbar .scroll-container {
+      opacity: 1;
+    }
+  }
+
+  .preset {
+    height: 9px;
+    width: 9px;
+    border: 1px solid #000;
+    cursor: pointer;
+    display: none;
+    position: relative;
+    right: 0;
+
+    &.useful {
+      display: block;
+      background-image: url(~@/assets/images/expand-left.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .scrollbar {
+    background-color: transparent;
+    border-right: 1px solid #000;
+    flex: 1;
+    // width: inherit;
+    cursor: pointer;
+    position: relative;
+
+    .scroll-container {
+      position: absolute;
+      width: 2px;
+      height: 100%;
+      left: 4px;
+      background-color: #3b8be4;
+      opacity: 0.6;
+    }
+
+    .scrollblock {
+      position: absolute;
+      right: 1px;
+      width: 15px;
+      height: 12px;
+      background-color: var(--navHoverColor);
+      border-radius: 4px;
+      margin-top: -16px;
+      cursor: pointer;
+      transform: translateY(100%);
+    }
+
+    .scrollTop,
+    .scrollBottom {
+      display: inline-block;
+      height: 10px;
+      width: 15px;
+      position: absolute;
+      right: 0;
+      cursor: pointer;
+      background-repeat: no-repeat;
+      background-size: contain;
+      transform: scale(1.3);
+    }
+
+    .scrollTop {
+      background-image: url(~@/assets/images/up.png);
+      top: -9px;
+    }
+
+    .scrollBottom {
+      background-image: url(~@/assets/images/down.png);
+      bottom: -11px;
+    }
+  }
+}
+
+.link {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  background-image: url(~@/assets/images/link.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  &:hover {
+    .sync {
+      display: flex;
+    }
+  }
+
+  .sync {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    top: -100px;
+    left: -80px;
+    width: 110px;
+    height: 100px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+    background: #ffffff;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    border-radius: 5px;
+    padding-left: 15px;
+    box-sizing: border-box;
+
+    .el-checkbox {
+      margin: 5px 0;
+      width: 70%;
+    }
+  }
+}
+
+.icon-select {
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  transform: translateY(-50%) rotate(-90deg);
+  width: 14px;
+  height: 14px;
+  z-index: 3;
+  background-image: url(~@/assets/images/select2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: transform 0.3s;
+  &:hover {
+    background-image: url(~@/assets/images/select2-hover.png);
+    // + .mrpmipOption {
+    //   display: block;
+    // }
+  }
+  &-rotate {
+    transform: translateY(-50%) rotate(-180deg);
+  }
+}
+.stitching-checkbox {
+  position: absolute;
+  left: 0px;
+  bottom: 3px;
+  width: 14px;
+  height: 14px;
+  z-index: 3;
+  opacity: 0;
+}
+.mrpmipOption {
+  z-index: 1000;
+  position: absolute;
+  left: 5px;
+  bottom: 22px;
+  padding: 10px 6px;
+  background: var(--themGary);
+  color: var(--defaultfontColor);
+  //   width: 80px;
+  //   height: 70px;
+  &:hover {
+    display: block;
+  }
+
+  ::v-deep {
+    @include resetSelect(var(--defaultfontColor2));
+  }
+  .option-item {
+    position: relative;
+    margin-bottom: 10px;
+    font-size: 12px;
+    // color: #eeeeee;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    input[type="number"] {
+      box-sizing: border-box;
+      padding: 0 4px;
+      width: 50px;
+      height: 20px;
+      background: var(--themGary);
+      border-radius: 2px;
+      border: 1px solid #979797;
+      margin-left: 10px;
+      -moz-appearance: textfield;
+      color: var(--defaultfontColor);
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+    .slider-wrapper {
+      width: 94px;
+    }
+    .input-wrapper {
+      position: relative;
+    }
+    span {
+      position: absolute;
+      top: 1px;
+      right: 4px;
+    }
+    ::v-deep {
+      .el-select .el-input input {
+        width: 155px;
+      }
+    }
+    ::v-deep {
+      .mprPopper {
+        top: auto !important;
+        bottom: 100% !important;
+        .popper__arrow {
+          display: none;
+        }
+      }
+    }
+    .check {
+      ::v-deep {
+        @include resetCheckBox(#cccccc);
+        .el-checkbox__label {
+          color: var(--defaultfontColor2);
+          font-weight: normal;
+          font-size: 12px;
+          padding-left: 5px;
+        }
+        // checkbox 勾选字体颜色
+        .el-checkbox__inner::after {
+          border-color: #333333;
+        }
+        .el-checkbox__inner::before {
+          background-color: #000000;
+        }
+      }
+    }
+  }
+  .space-between {
+    justify-content: space-between;
+  }
+
+  .option-disable {
+    &::after {
+      position: absolute;
+      content: "";
+      width: 105%;
+      height: 100%;
+      top: 0;
+      left: -5px;
+      background: var(--themGary);
+      opacity: 0.5;
+      z-index: 100;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.screenshotBox {
+  position: absolute;
+  box-sizing: border-box;
+  border: 2px solid #1aad19;
+
+  .posBox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: move;
+
+    .floatBox {
+      width: 12px;
+      height: 12px;
+      background: #1aad19;
+      position: absolute;
+      margin: auto;
+      cursor: pointer;
+
+      &:nth-child(1) {
+        left: -6px;
+        top: -6px;
+        cursor: se-resize;
+      }
+
+      &:nth-child(2) {
+        right: -6px;
+        top: -6px;
+        cursor: ne-resize;
+      }
+
+      &:nth-child(3) {
+        left: -6px;
+        bottom: -6px;
+        cursor: ne-resize;
+      }
+
+      &:nth-child(4) {
+        right: -6px;
+        bottom: -6px;
+        cursor: se-resize;
+      }
+
+      &:nth-child(5) {
+        left: 0;
+        right: 0;
+        top: -6px;
+      }
+
+      &:nth-child(6) {
+        top: 0;
+        bottom: 0;
+        right: -6px;
+      }
+
+      &:nth-child(7) {
+        left: 0;
+        right: 0;
+        bottom: -6px;
+      }
+
+      &:nth-child(8) {
+        top: 0;
+        bottom: 0;
+        left: -6px;
+      }
+    }
+
+    .toolNav {
+      width: 60px;
+      height: 30px;
+      position: absolute;
+      bottom: -36px;
+      right: -2px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .btn {
+        width: 26px;
+        height: 26px;
+        overflow: hidden;
+        cursor: pointer;
+
+        &:nth-child(1) {
+          @include background_styles(
+            $sprite_sheet,
+            -548px,
+            -848px,
+            -548px,
+            -848px
+          );
+        }
+
+        &:nth-child(2) {
+          @include background_styles(
+            $sprite_sheet,
+            -498px,
+            -848px,
+            -498px,
+            -848px
+          );
+        }
+      }
+    }
+
+    .posTop {
+      bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,199 @@
+@import "~@/assets/css/common";
+
+.selectBox_main{
+  width: 270px;
+  height: calc(100% - #{$toolbarHeight});
+  border-radius: 4px;
+  position: absolute;
+  right: 0;
+  top: $toolbarHeight;
+  background-color: var(--themGary);
+  color: var(--defaultfontColor);
+  z-index: $popZIndex;
+  font-size: 12px;
+  &.vertical {
+    top: $toolbarVerticalHeight;
+    height: calc(100% - #{$toolbarVerticalHeight});
+  }
+
+  .param-header{
+    padding:0 10px;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    background-color: var(--themGary);
+    position: relative;
+    border-bottom: 1px solid var(--gary2);
+    span{
+      width:15px;
+      height:15px;
+      display: block;
+      position: absolute;
+      right: 10px;
+      top: 12px;
+      cursor:pointer;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  .container {
+    width: 100%;
+    height: calc(100% - 40px);
+
+    .box:nth-of-type(1) {
+      margin-top: 10px;
+    }
+    .box{
+      box-sizing: border-box;
+      width: 100%;
+      padding: 0 10px;
+      height:50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      section{
+        display: flex;
+        &:hover {
+          input.rtd {
+            border-color: var(--navHoverColor);
+          }
+          .selectBox3 {
+            background-color: var(--navHoverColor);
+            border-color: var(--navHoverColor);
+            .input {
+              color: #FFFFFF;
+            }
+          }
+        }
+      }
+      .selectBox3{
+        width: 50px;
+        height: 30px;
+        position: relative;
+        text-align: center;
+        border: 1px solid var(--gary2);
+        border-radius: 0 3px 3px 0;
+        box-sizing: border-box;
+        background-color: var(--gary4);
+        &:hover{
+          ul{
+            display:block;
+          }
+        }
+        .input{
+          display: block;
+          width:100%;
+          height: 100%;
+          line-height: 30px;
+          text-align: center;
+          padding:0 10px;
+          color: var(--defaultfontColor2);
+          font-size:12px;
+          border:none;
+          box-sizing: border-box;
+        }
+        ul{
+          position: absolute;
+          top:100%;
+          left:0;
+          width:100%;
+          max-height: 145px;
+          background: var(--themGary);
+          display: none;
+          overflow:auto;
+          z-index:1;
+          li{
+            width:100%;
+            height:30px;
+            line-height:30px;
+            text-align: center;
+            box-sizing: border-box;
+            background: var(--gary6);
+            cursor:pointer;
+            color: var(--defaultfontColor2);
+            &:hover{
+              color: #FFFFFF;
+              background: var(--navHoverColor);
+            }
+          }
+        }
+      }
+      input{
+        width:160px;
+        height: 30px;
+        padding:0 10px;
+        background-color: var(--seriesListItemBg);
+        font-size:12px;
+        color: var(--defaultfontColor2);
+        border: 1px solid var(--gary2);
+        box-sizing: border-box;
+        border-radius: 3px;
+        &:focus {
+          border-color: var(--navHoverColor);
+        }
+        &.rtd{
+          border-bottom-right-radius: 0;
+          border-top-right-radius: 0;
+          border-right: none;
+          width:110px;
+        }
+      }
+      .invalid{
+        border:1px solid red;
+      }
+      div{
+        width:160px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        input{
+          width:30px;
+          padding:0;
+          text-align: center;
+          flex:1;
+        }
+      }
+      div.division {
+        width: 10px;
+        padding: 0 5px;
+      }
+    }
+  }
+}
+
+.btns {
+  width: 100%;
+  bottom:30px;
+  margin:15px auto 25px;
+  display: flex;
+  justify-content: center;
+  div{
+    width: 70px;
+    height: 30px;
+    background: var(--navHoverColor);
+    color: #FFFFFF;
+    border-radius: 4px;
+    text-align: center;
+    line-height:30px;
+    cursor: pointer;
+    border: 1px solid var(--navHoverColor);
+    box-sizing: border-box;
+  }
+  div.reset {
+    position: relative;
+    background-color: var(--navHoverColor8);
+    padding-left: 15px;
+    margin-left: 11px;
+    &::before {
+      content: "";
+      width: 15px;
+      height: 15px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      left: 13px;
+      top: 7px;
+    }
+  }
+}

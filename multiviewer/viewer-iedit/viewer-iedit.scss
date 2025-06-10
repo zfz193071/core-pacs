@@ -1,0 +1,228 @@
+#editWrapper {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  overflow: hidden;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  z-index: 23;
+  border: 2px solid var(--canvasBColor);
+}
+#SVGM_SVG {
+  position: absolute;
+  z-index: -1;
+}
+
+.pen-crop-mask {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.crop-confirm-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  .confirm-bar {
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    width: 235px;
+    height: 40px;
+    border-radius: 5px;
+    background: #333333;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+  }
+  .btn-confirm,
+  .btn-cancel {
+    width: 22px;
+    height: 22px;
+    outline: none;
+    cursor: pointer;
+    margin-left: 10px;
+    border: none;
+  }
+  .btn-confirm {
+    background: url("../../../assets/screenshot/images/sure.png");
+    &:hover {
+      background: url("../../../assets/screenshot/images/sure2.png");
+    }
+  }
+  .btn-cancel {
+    background: url("../../../assets/screenshot/images/cancel.png");
+    &:hover {
+      background: url("../../../assets/screenshot/images/cancel2.png");
+      background-size: contain;
+    }
+  }
+}
+
+.penAddCursor {
+  cursor: url(../../../../static/cursor/penadd.png), default;
+}
+
+.penReduCursor {
+  cursor: url(../../../../static/cursor/penredu.png), default;
+}
+
+.penCursor {
+  cursor: url(../../../../static/cursor/pen.png), default;
+}
+
+.roundCursor {
+  cursor: url(../../../../static/cursor/round.png), default;
+}
+
+.rectCursor {
+  cursor: url(../../../../static/cursor/rect.png), default;
+}
+
+.curveLineCursor {
+  cursor: url(../../../../static/cursor/curveLine.png), default;
+}
+.curveRulerCursor {
+  cursor: url(../../../../static/cursor/curveRuler.png), default;
+}
+
+.arrowCursor {
+  cursor: url(../../../../static/cursor/arrow.png), default;
+}
+
+.angleCursor {
+  cursor: url(../../../../static/cursor/angle.png), default;
+}
+
+.rulerCursor {
+  cursor: url(../../../../static/cursor/ruler.png), default;
+}
+
+.textCursor {
+  // cursor: url(../../../../static/cursor/text.png), default;
+  cursor: text;
+}
+
+.rubberCursor {
+  cursor: url(../../../../static/cursor/rubber.png), default;
+}
+
+.suvCursor {
+  cursor: crosshair;
+}
+
+.hide {
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+}
+
+.InfoAndPos {
+  p {
+    width: 20px;
+    height: 20px;
+    background: rgba(136, 152, 168, 0.6);
+    border-radius: 10px;
+    position: absolute;
+    cursor: move;
+    z-index: 999;
+  }
+
+  .editInfo {
+    position: absolute;
+    background-color: rgba(30, 30, 30, 0.9);
+    font-size: 12px;
+    line-height: 30px;
+    color: rgba(22, 255, 255, 0.5);
+    cursor: move;
+
+    span {
+      padding-left: 10px;
+    }
+  }
+
+  &:hover {
+    p {
+      background: rgba(22, 255, 255, 0.6);
+    }
+
+    .editInfo {
+      background-color: rgba(10, 10, 10, 0.9);
+    }
+  }
+}
+
+.iSure {
+  background-image: url(../../../assets/images/sprite_sheet2.png);
+  background-repeat: repeat;
+  display: none;
+  height: 23px;
+  width: 23px;
+  background-attachment: scroll;
+  background-position: -300px -850px;
+  position: absolute;
+  z-index: 14;
+  cursor: pointer;
+}
+
+.canvasInput {
+  position: absolute;
+  z-index: 970;
+  cursor: text;
+  padding: 5px;
+  background-color: rgba(10, 10, 10, 0.7);
+  border: none;
+  color: #3bd0e0;
+
+  &.canvasInputShow {
+    display: block;
+  }
+
+  &.canvasInputHide {
+    display: none;
+  }
+}
+
+.iDelete:hover {
+  background-image: url(../../../assets/images/sprite_sheet2.png);
+  background-repeat: repeat;
+  display: none;
+  height: 16px;
+  width: 16px;
+  background-attachment: scroll;
+  background-position: -550px -850px;
+  position: absolute;
+  z-index: 14;
+  cursor: pointer;
+}
+
+.iDelete {
+  background-image: url(../../../assets/images/sprite_sheet2.png);
+  background-repeat: repeat;
+  height: 16px;
+  width: 16px;
+  background-attachment: scroll;
+  background-position: -350px -850px;
+  position: absolute;
+  z-index: 14;
+  cursor: pointer;
+
+  &.iDeleteShow {
+    display: inline;
+  }
+
+  &.iDeleteHide {
+    display: none;
+  }
+}

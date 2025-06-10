@@ -1,0 +1,158 @@
+.viewer-ai-analysis {
+  position: absolute;
+  right: 0;
+  width: 630px;
+  height:100%;
+  top: 0;
+  z-index: 999;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: #333e4e;
+  user-select: text;
+
+  .header {
+    display: flex;
+    flex-flow: nowrap;
+    border-bottom: 1px solid #29303C;
+    height: 48px;
+    align-items: center;
+    padding-left: 10px;
+
+    .close {
+      background-image: url(~@/assets/images/sprite_sheet1.png);
+      background-repeat: repeat;
+      height: 24px;
+      width: 24px;
+      background-position: -100px -200px;
+      cursor: pointer;
+      margin-right: 5px;
+      &:hover {
+        background-position: -100px -250px;
+      }
+    }
+
+    .title {
+      font-size: 14px;
+      font-weight: 500;
+      color: #C1D0E4;
+      line-height: 20px;
+    }
+  }
+
+  .filter {
+    display: flex;
+    padding: 0 10px;
+    justify-content: flex-start;
+    height: 50px;
+    align-items: center;
+
+    .selectBox {
+      margin-right: 15px;
+    }
+
+    .operation {
+      cursor: pointer;
+      color: #CAD0E1;
+      font-size: 12px;
+      width: 66%;
+      text-align: right;
+      display: flex;
+      justify-content: flex-end;
+
+      .show {
+        margin-right: 10px;
+      }
+      .show, .hidden, .pink-up {
+        color: #C1C6D5;
+        width: 55px;
+        border: 1px solid #697588;
+        border-radius: 2px;
+        padding: 2px 3px;
+        text-align: center;
+        margin-right: 7px;
+        &:hover {
+          color: #ffffff;
+        }
+
+        img {
+          width: 18px;
+          height: 13px;
+          object-fit: contain;
+          vertical-align: middle;
+          margin-right: 2px;
+        }
+      }
+    }
+  }
+
+  .table {
+    padding: 0 10px;
+    box-sizing: border-box;
+    height: calc(100% - 105px);
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+  }
+}
+
+.selectBox {
+  width: 155px;
+  height: 28px;
+  border: 1px solid #697588;
+  border-radius: 2px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right:2px;
+  position: relative;
+  cursor:pointer;
+  &:hover{
+    ul{
+      display:block;
+    }
+  }
+  .input{
+    height:20px;
+    padding:0 10px;
+    color:#5c667f;
+    font-size:12px;
+    line-height:20px;
+    text-align:left;
+  }
+  .selectBtn{
+    width:20px;
+    height:26px;
+    background:url(../../../assets/images/roi.png) no-repeat  0 -202px;
+  }
+  ul{
+    position: absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    max-height: 145px;
+    background:#61728e;
+    display: none;
+    overflow:auto;
+    z-index: 10;
+    li{
+      width:100%;
+      height:28px;
+      line-height:28px;
+      padding-left:10px;
+      box-sizing: border-box;
+      background:#75859c;
+      margin-bottom:1px;
+      cursor:pointer;
+      text-align:left;
+      color:#2c3e50;
+      font-size: 12px;
+      &:hover{
+        background:#6d91a6;
+      }
+      white-space:nowrap;
+      overflow: hidden;
+      text-overflow:ellipsis;
+    }
+  }
+}
